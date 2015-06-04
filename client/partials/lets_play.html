@@ -1,0 +1,15 @@
+<div ng-controller='playController'>
+	<p>Hi <span ng-bind='user_name'></span>!</p>
+	<p>Answer each question or else!</p>
+
+	<div class='question' ng-repeat='question in questions'>
+		<p ng-bind='question.question'></p>
+		<input type='radio' name={{question._id}} ng-model='question.model' ng-value='question.choices[0]'>{{question.choices[0]}}
+		<input type='radio' name={{question._id}} ng-model='question.model' ng-value='question.choices[1]'>{{question.choices[1]}}
+		<input type='radio' name={{question._id}} ng-model='question.model' ng-value='question.choices[2]'>{{question.choices[2]}}
+	</div>
+
+	<a href="#/"><input type='button' value='Cancel'></a>
+	<input type='button' ng-click='submitAnswers()' value='Submit'>
+	<p class='error' ng-bind='error'></p>
+</div>

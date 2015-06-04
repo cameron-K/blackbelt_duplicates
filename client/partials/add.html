@@ -1,0 +1,22 @@
+<div ng-controller='addController'>
+<a href="#/">Home</a> | <a href="#/add">Add a Question</a>
+
+	<h3>New Question</h3>
+
+	<label>Question</label>
+	<textarea ng-model='newQuestion.question'></textarea>
+
+	<label>Correct Answer</label>
+	<input type='text' ng-model='newQuestion.answer'>
+
+	<label>False Answer 1</label>
+	<input type='text' ng-model='newQuestion.false_one'>
+
+	<label>False Answer 2</label>
+	<input type='text' ng-model='newQuestion.false_two'>
+
+	<a href="#/"><input type='button' value='Cancel'></a>
+	<input type='button' ng-click='addQuestion()' value='Add'>
+	<p class='error' ng-repeat='error in errors' ng-bind='error'></p>
+
+</div>
